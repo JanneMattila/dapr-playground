@@ -1,22 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Dapr;
-using DaprDemo.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-
-namespace DaprDemo.Controllers
+﻿namespace DaprDemo.Controllers
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using Dapr;
+    using DaprDemo.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase
     {
+        private readonly ILogger<OrdersController> _logger;
         private readonly StateClient _stateClient;
 
-        public OrdersController(StateClient stateClient)
+        public OrdersController(ILogger<OrdersController> logger, StateClient stateClient)
         {
+            _logger = logger;
             _stateClient = stateClient;
         }
 

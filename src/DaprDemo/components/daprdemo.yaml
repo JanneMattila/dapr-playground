@@ -1,0 +1,41 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: daprdemo
+  labels:
+    app: daprdemo
+spec:
+  selector:
+    app: daprdemo
+  ports:
+  - protocol: TCP
+    port: 30080
+    targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: daprdemo
+  labels:
+    app: daprdemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: daprdemo
+  template:
+    metadata:
+      labels:
+        app: daprdemo
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/id: "daprdemo"
+        dapr.io/port: "80"
+    spec:
+      containers:
+      - name: daprdemo
+        image: daprdemo
+        ports:
+        - containerPort: 80
+        imagePullPolicy: IfNotPresent

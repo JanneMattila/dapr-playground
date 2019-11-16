@@ -114,3 +114,18 @@ csharp_space_between_method_call_empty_parameter_list_parentheses = false
 # Wrapping preferences
 csharp_preserve_single_line_statements = true
 csharp_preserve_single_line_blocks = true
+
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = none
+
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.SA1309.severity = none
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none

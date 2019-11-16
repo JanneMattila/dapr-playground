@@ -1,7 +1,7 @@
-﻿using System.Text.Json.Serialization;
-
-namespace DaprDemo.Models
+﻿namespace DaprDemo.Models
 {
+    using System.Text.Json.Serialization;
+
     public class Order
     {
         [JsonPropertyName("id")]

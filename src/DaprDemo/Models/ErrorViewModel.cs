@@ -1,6 +1,4 @@
-using System;
-
-namespace DaprDemo.Models
+﻿namespace DaprDemo.Models
 {
     public class ErrorViewModel
     {

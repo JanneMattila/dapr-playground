@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using DaprDemo.Models;
-
-namespace DaprDemo.Controllers
+﻿namespace DaprDemo.Controllers
 {
+    using System.Diagnostics;
+    using DaprDemo.Models;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Logging;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
