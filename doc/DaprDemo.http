@@ -1,4 +1,4 @@
-@server = https://localhost:32768
+@server = http://localhost:5000
 
 ### GET Order
 GET {{server}}/api/Orders/abc123 HTTP/1.1
